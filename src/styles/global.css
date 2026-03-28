@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 引入更现代、更精致的字体 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
 /* 自定义全局样式或覆盖 Tailwind */
 html {
   scroll-behavior: smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
@@ -48,6 +52,11 @@ a {
 
 .btn-secondary {
   @apply bg-gray-800/50 text-gray-300 hover:bg-gray-800 hover:text-white border border-gray-700/50 focus-visible:ring-gray-500 backdrop-blur-sm;
+}
+
+/* 专门针对数字和代码的等宽字体 */
+.font-mono, .address-text {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* 标题 */
