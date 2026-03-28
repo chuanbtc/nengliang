@@ -12,19 +12,23 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout
-  title={`TRX能量租赁｜有U ${PRICE_WITH_U} TRX / 无U ${PRICE_WITHOUT_U} TRX｜能量站`}
-  description={`USDT(TRC20) 转账能量按笔计费：对方地址有 U ${PRICE_WITH_U} TRX / 笔，无 U ${PRICE_WITHOUT_U} TRX / 笔。向公示地址转入后自动处理。`}
-  keywords="TRX能量租赁,2.5TRX,5TRX,波场能量,TRC20转账能量,能量闪租"
+  title={`【官方】TRX能量租赁平台 - ${PRICE_WITH_U}/${PRICE_WITHOUT_U} TRX/笔，波场TRON转账省80%手续费`}
+  description={`专业波场TRX能量租赁平台，USDT(TRC20)转账有U地址仅需${PRICE_WITH_U} TRX，无U地址${PRICE_WITHOUT_U} TRX。即时自动到账，安全可靠，大幅降低您的链上交易成本。`}
+  keywords="TRX能量租赁,波场能量租赁,TRON能量租赁,USDT转账手续费,TRC20能量,波场TRX,能量闪租,TRX25"
 >
   <section class="price-hero" id="price" aria-labelledby="price-title">
-    <p class="price-hero__label">按笔计费 · 公开透明</p>
+    <p class="price-hero__label">即时到账 · 极速省钱</p>
     <h1 id="price-title" class="price-hero__amount">
       {PRICE_WITH_U} / {PRICE_WITHOUT_U}
       <span class="price-hero__unit"> TRX / 笔</span>
     </h1>
-    <p class="price-hero__sub">{SITE_TAGLINE}</p>
-    <p class="price-hero__sub" style="margin-top: 0.5rem">
-      对方地址有 U 按 {PRICE_WITH_U} TRX，一般无 U 按 {PRICE_WITHOUT_U} TRX。看不懂也没关系，按下面 3 步操作即可。
+    <p class="price-hero__sub">
+      USDT(TRC20)转账手续费立省最高 80%，全自动即时派发。
+    </p>
+    <p class="price-hero__sub" style="margin-top: 1.5rem">
+      <a class="btn" href={TRONSCAN_ADDRESS_URL} target="_blank" rel="noopener noreferrer">
+        TronScan 查询地址 →
+      </a>
     </p>
   </section>
 
@@ -34,23 +38,45 @@ const base = import.meta.env.BASE_URL;
       <div class="price-card price-card--highlight">
         <div class="price-card__name">对方地址已有 U</div>
         <div class="price-card__val">{PRICE_WITH_U} TRX</div>
-        <div class="price-card__hint">大多数普通单笔转账看这个价格就行</div>
+        <div class="price-card__hint">普通 USDT 转账，节省大量手续费</div>
       </div>
       <div class="price-card">
         <div class="price-card__name">对方地址无 U</div>
         <div class="price-card__val">{PRICE_WITHOUT_U} TRX</div>
-        <div class="price-card__hint">首次激活或对方地址没 U，通常按更高能量算</div>
+        <div class="price-card__hint">新地址或无 USDT 余额，首次转账推荐</div>
       </div>
       <div class="price-card">
         <div class="price-card__name">到账方式</div>
         <div class="price-card__val">自动</div>
-        <div class="price-card__hint">链上确认后自动处理，请只用本页地址</div>
+        <div class="price-card__hint">全天候 AI 自动派发，快速无感</div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="sec-advantages">
+    <h2 id="sec-advantages">为什么选择能量站？</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>🚀 极速到账</h3>
+        <p>链上确认后即时派发，告别漫长等待。</p>
+      </div>
+      <div class="card">
+        <h3>💰 成本优化</h3>
+        <p>按需租赁，大幅降低您的 TRX 转账成本。</p>
+      </div>
+      <div class="card">
+        <h3>🛡️ 安全可靠</h3>
+        <p>所有交易链上可查，地址公示透明，无私钥风险。</p>
+      </div>
+      <div class="card">
+        <h3>🤖 全自动处理</h3>
+        <p>AI 智能监控，无需人工干预，24/7 全天候服务。</p>
       </div>
     </div>
   </section>
 
   <section id="steps" aria-labelledby="sec-steps">
-    <h2 id="sec-steps">3 步完成</h2>
+    <h2 id="sec-steps">简单 3 步，轻松获取能量</h2>
     <div class="steps">
       <div class="step">
         <span class="step__num" aria-hidden="true">1</span>
@@ -63,7 +89,7 @@ const base = import.meta.env.BASE_URL;
         <span class="step__num" aria-hidden="true">2</span>
         <div class="step__body">
           <h3>按情况转入 {PRICE_WITH_U} 或 {PRICE_WITHOUT_U} TRX</h3>
-          <p>有 U 转 {PRICE_WITH_U}，无 U 转 {PRICE_WITHOUT_U}；不确定时按无 U 处理更稳妥。</p>
+          <p>对方地址有 U 转 ${PRICE_WITH_U} TRX，无 U 转 ${PRICE_WITHOUT_U} TRX。不确定时，按无 U 价格转账更稳妥。</p>
         </div>
       </div>
       <div class="step">
@@ -83,7 +109,7 @@ const base = import.meta.env.BASE_URL;
         {TRON_RECEIVER_ADDRESS}
       </div>
       <p class="address-tip">
-        只转 <strong>TRX</strong>，不要转到其他链。转账前请再核对一遍地址。
+        **只转 TRX！** 务必确认网络是 <strong>TRON</strong>。转账前请务必核对地址和金额。
       </p>
       <div class="btn-row">
         <button type="button" class="btn-secondary" id="copy-address-btn">
@@ -105,23 +131,34 @@ const base = import.meta.env.BASE_URL;
     <h2 id="sec-faq">常见问题</h2>
     <div class="faq-list">
       <details>
-        <summary>为什么有两种价格？</summary>
+        <summary>Q：为什么能量租赁有两种价格？</summary>
         <p>
-          因为对方地址状态不同，消耗的能量也可能不同。现在按：
-          有 U {PRICE_WITH_U} TRX / 无 U {PRICE_WITHOUT_U} TRX 展示。
+          A：波场网络规则决定，接收方地址若无 USDT 余额或首次激活，消耗能量会更高。我们提供两种价格覆盖不同场景，确保您的转账成本最优。
         </p>
       </details>
       <details>
-        <summary>不会判断有 U / 无 U 怎么办？</summary>
-        <p>最简单的做法是按无 U 价格准备；或者先去 TronScan 看接收地址是否已有 USDT(TRC20) 记录。</p>
+        <summary>Q：怎么判断对方地址是否「有 U」？</summary>
+        <p>A：简单来说，如果对方地址从未收到过 USDT (TRC20) 或当前余额为零，可视为「无 U」地址。最准确的方法是前往 TronScan.org 查询该地址的 USDT 余额或历史交易记录。</p>
       </details>
       <details>
-        <summary>转错金额或转错链怎么办？</summary>
-        <p>链上转账不可逆，所以一定要确认网络、金额和地址。转错链通常无法找回。</p>
+        <summary>Q：转账到收款地址后，能量多久能到账？</summary>
+        <p>A：我们的系统全自动监控，通常在您的 TRX 转账完成后，等待 1-3 个区块确认（约 3-9 秒），能量即可自动派发到您发起转账的钱包地址。网络拥堵时可能略有延迟，但请放心，系统会确保处理。</p>
       </details>
       <details>
-        <summary>能量多久到账？</summary>
-        <p>一般几秒到十几秒内处理完成；网络拥堵时会更慢一些。</p>
+        <summary>Q：如果我转错了金额或转到了错误的链怎么办？</summary>
+        <p>A：波场 (TRON) 链上交易具有**不可逆性**。一旦转账完成，资金将无法追回。请务必在转账前仔细核对收款地址、转账网络（必须是 TRON）以及转账金额。**切勿将资金转入其他区块链网络或非本页公示的地址。**</p>
+      </details>
+      <details>
+        <summary>Q：能量租赁安全吗？我的私钥会不会泄露？</summary>
+        <p>A：能量站是一个去中心化的租赁服务平台，您全程只需将 TRX 转账到我们的公开收款地址，**无需提供任何私钥、助记词或授权。** 所有交易都在链上公开透明，安全可靠。请务必保护好您的个人钱包信息。</p>
+      </details>
+      <details>
+        <summary>Q：能量租赁能节省多少手续费？</summary>
+        <p>A：通过租赁能量，您可以避免在 TRC20 转账时因能量不足而燃烧 TRX。以一笔标准 TRC20 转账为例，如果没有能量，可能需要燃烧约 13.5 TRX (当接收方有 U) 或更高。通过我们的服务，您仅需支付 ${PRICE_WITH_U} 或 ${PRICE_WITHOUT_U} TRX，**最高可节省约 80% 的手续费**。</p>
+      </details>
+      <details>
+        <summary>Q：我可以使用哪个钱包进行操作？</summary>
+        <p>A：您可以使用任何支持 TRON (波场) 网络和 TRC20 代币的去中心化钱包，例如 TronLink, TokenPocket, imToken, SafePal 等。**请勿直接从交易所转账 TRX 到我们的收款地址**，以免系统无法识别您的能量需求并自动派发。</p>
       </details>
     </div>
   </section>
@@ -139,7 +176,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <p class="note">
-    <strong>提示：</strong>页面已经尽量做得简单直接，但转账前还是要确认网络为 <strong>TRON</strong>，并逐字核对地址。手机和电脑都可直接使用本页。
+    <strong>风险提示：</strong>链上操作不可逆，请务必核对收款地址和网络。本站仅为能量租赁服务，不构成任何投资或金融建议。正式经营请务必补充合规主体信息及法律声明。
   </p>
 
   <script define:vars={{ tronAddr: TRON_RECEIVER_ADDRESS }}>
