@@ -1,0 +1,32 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="TRC20 转账手续费说明｜USDT 波场网络｜能量站"
+  description="说明 TRC20 代币在波场网络上转账时为何会消耗能量或 TRX，以及常见的降费思路（租赁能量、预留 TRX 等）。"
+  keywords="TRC20手续费,USDT转账能量,波场转账费用,TRX能量租赁"
+>
+  <article class="prose">
+    <h1>TRC20 转账与手续费</h1>
+    <p>
+      在波场上转账 USDT（TRC20）等代币时，链上通常需要消耗<strong>能量</strong>。若账户能量不足，网络可能通过燃烧
+      TRX 来支付资源成本，因此用户会感觉「扣了 TRX 手续费」。
+    </p>
+    <h2>常见降费思路</h2>
+    <ul>
+      <li>提前准备适量 TRX 作为备用（需自行评估金额与风险）。</li>
+      <li>通过质押或租赁方式获得能量（规则与价格因渠道而异）。</li>
+      <li>合并小额转账，减少链上操作次数（视业务场景而定）。</li>
+    </ul>
+    <h2>注意</h2>
+    <p>
+      网络参数与钱包展示可能随版本变化，本文仅供入门理解。实际操作请以钱包与区块浏览器显示为准。
+    </p>
+    <p>
+      <a href={`${base}`}>返回首页</a>
+    </p>
+  </article>
+</Layout>

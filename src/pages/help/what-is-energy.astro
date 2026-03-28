@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="波场能量是什么？TRX 能量与带宽说明｜能量站"
+  description="介绍波场 TRON 网络中 Energy（能量）与 Bandwidth（带宽）的作用，以及与 TRC20 转账的关系，便于百度搜索长尾收录。"
+  keywords="波场能量,TRX能量,能量和带宽区别,TRON Energy"
+>
+  <article class="prose">
+    <h1>波场「能量」是什么？</h1>
+    <p>
+      在波场（TRON）网络上执行合约或部分转账操作时，会消耗 <strong>Energy（能量）</strong> 或
+      <strong>Bandwidth（带宽）</strong>。若资源不足，可能需要燃烧 TRX
+      作为手续费，或通过质押、租赁等方式获得能量。
+    </p>
+    <h2>能量与带宽的简单区分</h2>
+    <ul>
+      <li><strong>带宽</strong>：常用于简单转账类操作，每日有一定免费额度（以网络规则为准）。</li>
+      <li><strong>能量</strong>：多用于智能合约相关操作，例如常见的 TRC20 代币转账场景。</li>
+    </ul>
+    <h2>和「能量租赁」的关系</h2>
+    <p>
+      能量租赁一般指通过第三方服务临时获得能量，用于完成链上操作，从而减少单次燃烧 TRX
+      的成本。具体计费与到账方式因平台而异，使用前请阅读对方说明与协议。
+    </p>
+    <p>
+      <a href={`${base}`}>返回首页</a>
+    </p>
+  </article>
+</Layout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chuanbtc.github.io/nengliang/sitemap-index.xml

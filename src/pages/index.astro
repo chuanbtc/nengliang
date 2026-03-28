@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="波场 TRX 能量租赁服务｜能量站 Nengliang"
+  description="面向波场（TRON）用户的 TRX 能量租赁与相关说明，降低链上操作成本。具体规则与价格以站内公示为准。"
+  keywords="TRX能量租赁,波场能量,TRON能量,TRC20,能量租赁"
+>
+  <div class="hero">
+    <h1>波场 TRX 能量租赁服务</h1>
+    <p class="lead">
+      为 TRC20 转账等链上操作提供能量相关服务与说明。适合需要控制手续费、简化操作流程的用户了解与使用。
+    </p>
+    <a class="btn" href={`${base}contact/`}>咨询与合作</a>
+  </div>
+
+  <section aria-labelledby="sec-features">
+    <h2 id="sec-features">服务概要</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>能量租赁</h3>
+        <p>按笔或按套餐租用波场能量，用于满足转账等资源消耗场景（以实际上线规则为准）。</p>
+      </div>
+      <div class="card">
+        <h3>流程透明</h3>
+        <p>建议在正式使用前阅读帮助中心说明，了解能量、带宽与手续费的关系。</p>
+      </div>
+      <div class="card">
+        <h3>安全提示</h3>
+        <p>请认准官方渠道，勿向陌生人泄露助记词、私钥；链上操作不可逆，请谨慎授权。</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="sec-seo">
+    <h2 id="sec-seo">延伸阅读</h2>
+    <p style="color: var(--muted); margin-bottom: 1rem;">
+      以下页面便于检索与理解，可按需继续扩充为长尾内容。
+    </p>
+    <ul style="color: var(--muted); line-height: 2">
+      <li><a href={`${base}help/what-is-energy/`}>波场「能量」是什么？</a></li>
+      <li><a href={`${base}help/trc20-transfer-fee/`}>TRC20 转账与手续费说明</a></li>
+      <li><a href={`${base}about/`}>关于能量站</a></li>
+    </ul>
+  </section>
+
+  <p class="note">
+    <strong>声明：</strong>本站为项目展示与说明用途模板，上线前请替换为真实公司/主体信息、合规文案与联系方式，并勿使用无法核实的收益承诺类表述。
+  </p>
+</Layout>
