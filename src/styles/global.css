@@ -1,500 +1,70 @@
-:root {
-  --bg: #0c1222;
-  --surface: #151d2e;
-  --text: #e8ecf4;
-  --muted: #94a3b8;
-  --accent: #38bdf8;
-  --accent-dim: #0ea5e9;
-  --border: #2d3a52;
-  --max: 72rem;
-  font-family: "Segoe UI", system-ui, -apple-system, "PingFang SC",
-    "Microsoft YaHei", sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
+/* 自定义全局样式或覆盖 Tailwind */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.65;
-  font-size: 1rem;
+  /* Tailwind 已经提供背景色和文本色类，这里只是一个兜底 */
+  @apply bg-gray-950 text-gray-100 antialiased;
 }
 
 a {
-  color: var(--accent);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+  @apply text-blue-400 hover:underline;
 }
 
-.site-header {
-  border-bottom: 1px solid var(--border);
-  background: rgba(12, 18, 34, 0.92);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+/* 容器宽度 */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-.site-header__inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 1rem 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.125rem;
-  color: var(--text);
-  text-decoration: none;
-}
-.logo:hover {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
-  align-items: center;
-}
-.nav a {
-  color: var(--muted);
-  font-size: 0.9375rem;
-}
-.nav a:hover {
-  color: var(--accent);
-}
-
-main {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 2.5rem 1.25rem 4rem;
-}
-
-.hero {
-  padding: 2rem 0 3rem;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 3rem;
-}
-
-.hero h1 {
-  font-size: clamp(1.75rem, 4vw, 2.35rem);
-  line-height: 1.25;
-  margin: 0 0 1rem;
-  font-weight: 700;
-}
-
-.hero .lead {
-  font-size: 1.1rem;
-  color: var(--muted);
-  max-width: 40rem;
-  margin: 0 0 1.5rem;
-}
-
+/* 一些基础按钮样式 */
 .btn {
-  display: inline-block;
-  padding: 0.65rem 1.25rem;
-  border-radius: 0.5rem;
-  background: linear-gradient(135deg, var(--accent-dim), var(--accent));
-  color: #0c1222 !important;
-  font-weight: 600;
-  text-decoration: none !important;
-}
-.btn:hover {
-  filter: brightness(1.08);
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
 }
 
-section {
-  margin-bottom: 3rem;
-}
-
-section h2 {
-  font-size: 1.35rem;
-  margin: 0 0 1rem;
-}
-
-.card-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-}
-
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-}
-
-.card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.05rem;
-}
-
-.card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9375rem;
-}
-
-.prose {
-  max-width: 48rem;
-}
-.prose h1 {
-  font-size: 1.75rem;
-  margin-top: 0;
-}
-.prose h2 {
-  font-size: 1.2rem;
-  margin-top: 2rem;
-}
-.prose p,
-.prose li {
-  color: var(--muted);
-}
-.prose ul {
-  padding-left: 1.25rem;
-}
-
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding: 2rem 1.25rem;
-  margin-top: 2rem;
-  color: var(--muted);
-  font-size: 0.875rem;
-  text-align: center;
-}
-
-.site-footer nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.note {
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  padding: 1rem 1.25rem;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-/* 竞品常见：大单价 + 步骤 + 地址块 */
-.price-hero {
-  text-align: center;
-  padding: 2rem 0 2.5rem;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 2.5rem;
-}
-
-.price-hero__label {
-  font-size: 0.875rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.75rem;
-}
-
-.price-hero__amount {
-  font-size: clamp(2.75rem, 8vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin: 0 0 0.35rem;
-  background: linear-gradient(135deg, #7dd3fc, var(--accent), #a5f3fc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.price-hero__unit {
-  font-size: 1.25rem;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-.price-hero__sub {
-  color: var(--muted);
-  max-width: 28rem;
-  margin: 1rem auto 0;
-  font-size: 0.95rem;
-}
-
-.pricing-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-
-.price-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.price-card--highlight {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25);
-}
-
-.price-card__name {
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin-bottom: 0.5rem;
-}
-
-.price-card__val {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.price-card__hint {
-  font-size: 0.8125rem;
-  color: var(--muted);
-  margin-top: 0.5rem;
-}
-
-.steps {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  margin-bottom: 2.5rem;
-}
-
-.step {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-}
-
-.step__num {
-  flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: rgba(56, 189, 248, 0.15);
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step__body h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1rem;
-}
-
-.step__body p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-.address-section {
-  background: linear-gradient(180deg, var(--surface) 0%, rgba(21, 29, 46, 0.6) 100%);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  padding: 1.75rem 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.address-section h2 {
-  margin-top: 0;
-  text-align: center;
-}
-
-.address-box {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: stretch;
-  max-width: 40rem;
-  margin: 0 auto;
-}
-
-.address-text {
-  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  word-break: break-all;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  padding: 1rem 1.1rem;
-  color: var(--text);
-}
-
-.address-tip {
-  margin: 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-.btn-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
+.btn-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600 focus-visible:ring-blue-500;
 }
 
 .btn-secondary {
-  display: inline-block;
-  padding: 0.6rem 1.1rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--border);
-  color: var(--text) !important;
-  font-weight: 600;
-  text-decoration: none !important;
-  background: transparent;
-  cursor: pointer;
-  font-size: 0.9375rem;
+  @apply bg-gray-700 text-gray-200 hover:bg-gray-600 focus-visible:ring-gray-500;
 }
 
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent) !important;
+/* 标题 */
+h1 {
+  @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight;
 }
 
-.faq-list {
-  max-width: 40rem;
-  margin: 0 auto;
+h2 {
+  @apply text-2xl sm:text-3xl font-bold tracking-tight;
 }
 
-.faq-list details {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
+h3 {
+  @apply text-xl sm:text-2xl font-semibold;
 }
 
-.faq-list summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--text);
+/* FAQ */
+.faq-item details {
+  @apply bg-gray-800 border border-gray-700 rounded-lg mb-2;
 }
 
-.faq-list details[open] summary {
-  margin-bottom: 0.5rem;
+.faq-item summary {
+  @apply flex justify-between items-center p-4 cursor-pointer font-semibold text-gray-100;
 }
 
-.faq-list p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--muted);
+.faq-item details[open] summary {
+  @apply border-b border-gray-700 mb-2;
 }
 
-.anchor-nav a {
-  color: var(--muted);
+.faq-item p {
+  @apply px-4 pb-4 text-gray-300;
 }
 
-.anchor-nav a:hover {
-  color: var(--accent);
-}
-
-@media (max-width: 768px) {
-  .site-header__inner {
-    padding: 0.875rem 1rem;
-  }
-
-  .nav {
-    gap: 0.6rem 0.9rem;
-  }
-
-  .nav a {
-    font-size: 0.875rem;
-  }
-
-  main {
-    padding: 1.5rem 1rem 3rem;
-  }
-
-  .price-hero {
-    padding: 1rem 0 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .price-hero__amount {
-    font-size: clamp(2.1rem, 11vw, 3rem);
-  }
-
-  .price-hero__unit {
-    display: block;
-    margin-top: 0.25rem;
-    font-size: 1rem;
-  }
-
-  section {
-    margin-bottom: 2rem;
-  }
-
-  section h2 {
-    font-size: 1.15rem;
-  }
-
-  .pricing-row,
-  .steps,
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .price-card,
-  .step,
-  .address-section {
-    padding: 1rem;
-  }
-
-  .price-card__val {
-    font-size: 1.45rem;
-  }
-
-  .btn-row {
-    flex-direction: column;
-  }
-
-  .btn,
-  .btn-secondary {
-    width: 100%;
-    text-align: center;
-  }
-
-  .address-text {
-    font-size: 0.75rem;
-    padding: 0.9rem;
-  }
-
-  .faq-list details {
-    padding: 0.75rem 0.85rem;
-  }
+/* 地址显示 */
+.address-display {
+  @apply font-mono text-sm sm:text-base bg-gray-800 border border-gray-700 rounded-md p-3 break-all;
 }
