@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 const BASE_URL = process.env.PUBLIC_BASE_URL || "/nengliang";
 
 export default defineConfig({
-  site: "https://chuanbtc.github.io", // 你的域名，这里是 GitHub Pages 的主域名，腾讯云建议改成你自己的域名
+  site: "https://trx25.com", // 你的域名，这里是 GitHub Pages 的主域名，腾讯云建议改成你自己的域名
   base: BASE_URL,
   trailingSlash: "always",
   integrations: [sitemap()],
