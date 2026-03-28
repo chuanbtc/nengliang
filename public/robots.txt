@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chuanbtc.github.io/nengliang/sitemap-index.xml
+Sitemap: https://trx25.com/sitemap-index.xml
