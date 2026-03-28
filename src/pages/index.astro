@@ -5,175 +5,229 @@ import {
   TRONSCAN_ADDRESS_URL,
   PRICE_WITH_U,
   PRICE_WITHOUT_U,
-  SITE_TAGLINE,
 } from "../config/site";
 
 const base = import.meta.env.BASE_URL;
 ---
 
 <Layout
-  title={`【官方】TRX能量租赁平台 - ${PRICE_WITH_U}/${PRICE_WITHOUT_U} TRX/笔，波场TRON转账省80%手续费`}
+  title={`【官方】TRX能量租赁 - ${PRICE_WITH_U}/${PRICE_WITHOUT_U} TRX/笔，波场转账省80%手续费`}
   description={`专业波场TRX能量租赁平台，USDT(TRC20)转账有U地址仅需${PRICE_WITH_U} TRX，无U地址${PRICE_WITHOUT_U} TRX。即时自动到账，安全可靠，大幅降低您的链上交易成本。`}
   keywords="TRX能量租赁,波场能量租赁,TRON能量租赁,USDT转账手续费,TRC20能量,波场TRX,能量闪租,TRX25"
 >
-  <section id="price" class="flex flex-col items-center justify-center py-8 md:py-16 text-center border-b border-gray-800 mb-8 md:mb-12">
-    <p class="text-sm md:text-base text-gray-400 uppercase tracking-wider mb-2">即时到账 · 极速省钱</p>
-    <h1 id="price-title" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500">
-      {PRICE_WITH_U} / {PRICE_WITHOUT_U}<span class="text-xl md:text-2xl font-medium text-gray-400 block sm:inline-block sm:ml-2 sm:mt-0"> TRX / 笔</span>
+  <!-- Hero Section -->
+  <section id="hero" class="relative flex flex-col items-center justify-center py-16 md:py-24 lg:py-32 text-center mb-16 md:mb-24">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-8">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+      </span>
+      全自动 AI 派发，24/7 在线
+    </div>
+    
+    <h1 id="price-title" class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.1] mb-6">
+      <span class="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-500">波场转账</span><br />
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">立省 80% 手续费</span>
     </h1>
-    <p class="mt-4 text-base md:text-lg text-gray-300 max-w-2xl">
-      USDT(TRC20)转账手续费立省最高 80%，全自动即时派发。
+    
+    <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl font-light leading-relaxed">
+      USDT (TRC20) 转账能量按笔计费。无需繁琐授权，向指定地址转入 TRX 即可<strong class="text-gray-200 font-medium">秒级自动到账</strong>。
     </p>
-  </section>
-
-  <section aria-labelledby="sec-plans" class="mb-8 md:mb-12">
-    <h2 id="sec-plans" class="section-heading">价格说明</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-      <div class="bg-gray-800 border border-blue-500 rounded-xl p-6 text-center shadow-lg">
-        <div class="text-xs text-gray-400 mb-2">对方地址已有 U</div>
-        <div class="text-3xl font-bold text-blue-400">{PRICE_WITH_U} TRX</div>
-        <div class="mt-2 text-sm text-gray-400">常规单笔 USDT 转账能量，<br class="sm:hidden" />立省手续费！</div>
-      </div>
-      <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center">
-        <div class="text-xs text-gray-400 mb-2">对方地址无 U</div>
-        <div class="text-3xl font-bold text-gray-100">{PRICE_WITHOUT_U} TRX</div>
-        <div class="mt-2 text-sm text-gray-400">新地址或无 USDT 余额，<br class="sm:hidden" />首次转账更推荐此项。</div>
-      </div>
-      <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center">
-        <div class="text-xs text-gray-400 mb-2">到账方式</div>
-        <div class="text-3xl font-bold text-gray-100">自动</div>
-        <div class="mt-2 text-sm text-gray-400">全天候 AI 智能派发，<br class="sm:hidden" />极速无感。</div>
-      </div>
+    
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+      <a class="btn btn-primary w-full sm:w-auto px-8 py-4 text-base shadow-[0_0_30px_rgba(59,130,246,0.25)] hover:shadow-[0_0_40px_rgba(59,130,246,0.4)]" href="#address">
+        获取收款地址
+      </a>
+      <a class="btn btn-secondary w-full sm:w-auto px-8 py-4 text-base" href="#steps">
+        查看使用教程
+      </a>
     </div>
   </section>
 
-  <section aria-labelledby="sec-advantages" class="mb-8 md:mb-12">
-    <h2 id="sec-advantages" class="section-heading">为什么选择能量站？</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-      <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center">
-        <h3 class="text-lg font-semibold mb-2">🚀 极速到账</h3>
-        <p class="text-sm text-gray-400">链上确认后即时派发，告别漫长等待。</p>
-      </div>
-      <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center">
-        <h3 class="text-lg font-semibold mb-2">💰 成本优化</h3>
-        <p class="text-sm text-gray-400">按需租赁，大幅降低您的 TRX 转账成本。</p>
-      </div>
-      <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center">
-        <h3 class="text-lg font-semibold mb-2">🛡️ 安全可靠</h3>
-        <p class="text-sm text-gray-400">所有交易链上可查，地址公示透明，无私钥风险。</p>
-      </div>
-      <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center">
-        <h3 class="text-lg font-semibold mb-2">🤖 全自动处理</h3>
-        <p class="text-sm text-gray-400">AI 智能监控，无需人工干预，24/7 全天候服务。</p>
-      </div>
+  <!-- Pricing Section -->
+  <section id="price" aria-labelledby="sec-plans" class="mb-20 md:mb-32 scroll-mt-24">
+    <div class="text-center mb-12">
+      <h2 id="sec-plans" class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">极简定价，拒绝套路</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">根据接收方地址状态，系统自动匹配最优能量方案。</p>
     </div>
-  </section>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <!-- Plan 1 -->
+      <div class="relative group">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-transparent rounded-3xl blur-xl transition-all duration-500 group-hover:opacity-100 opacity-0"></div>
+        <div class="relative h-full bg-[#0a0f1c] border border-blue-500/30 rounded-3xl p-8 md:p-10 flex flex-col items-center text-center overflow-hidden">
+          <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
+          <div class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold tracking-wider uppercase mb-6">
+            常规推荐
+          </div>
+          <h3 class="text-xl text-gray-300 font-medium mb-2">对方地址已有 U</h3>
+          <div class="flex items-baseline justify-center gap-2 mb-6">
+            <span class="text-5xl md:text-6xl font-black text-white">{PRICE_WITH_U}</span>
+            <span class="text-xl text-gray-500 font-medium">TRX / 笔</span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            适用于绝大多数普通 USDT 转账场景。<br />系统将自动派发约 65,000 能量。
+          </p>
+        </div>
+      </div>
 
-  <section id="steps" aria-labelledby="sec-steps" class="mb-8 md:mb-12">
-    <h2 id="sec-steps" class="section-heading">简单 3 步，轻松获取能量</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-      <div class="flex items-start bg-gray-800 border border-gray-700 rounded-xl p-6">
-        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center mr-4">1</span>
-        <div>
-          <h3 class="text-lg font-semibold mb-1">复制收款地址</h3>
-          <p class="text-sm text-gray-400">复制本页收款地址，务必确认网络为 <strong>TRON</strong>。</p>
-        </div>
-      </div>
-      <div class="flex items-start bg-gray-800 border border-gray-700 rounded-xl p-6">
-        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center mr-4">2</span>
-        <div>
-          <h3 class="text-lg font-semibold mb-1">按情况转入 {PRICE_WITH_U} 或 {PRICE_WITHOUT_U} TRX</h3>
-          <p class="text-sm text-gray-400">对方地址有 U 转 ${PRICE_WITH_U} TRX，无 U 转 ${PRICE_WITHOUT_U} TRX。不确定时，按无 U 价格转账更稳妥。</p>
-        </div>
-      </div>
-      <div class="flex items-start bg-gray-800 border border-gray-700 rounded-xl p-6">
-        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center mr-4">3</span>
-        <div>
-          <h3 class="text-lg font-semibold mb-1">等待能量到账</h3>
-          <p class="text-sm text-gray-400">链上确认后即时自动到账，高峰期或有少量延迟。</p>
+      <!-- Plan 2 -->
+      <div class="relative group">
+        <div class="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent rounded-3xl blur-xl transition-all duration-500 group-hover:opacity-100 opacity-0"></div>
+        <div class="relative h-full bg-[#0a0f1c] border border-gray-800 rounded-3xl p-8 md:p-10 flex flex-col items-center text-center transition-colors duration-300 hover:border-gray-700">
+          <div class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-gray-800 text-gray-400 text-xs font-semibold tracking-wider uppercase mb-6">
+            首次激活
+          </div>
+          <h3 class="text-xl text-gray-300 font-medium mb-2">对方地址无 U</h3>
+          <div class="flex items-baseline justify-center gap-2 mb-6">
+            <span class="text-5xl md:text-6xl font-black text-white">{PRICE_WITHOUT_U}</span>
+            <span class="text-xl text-gray-500 font-medium">TRX / 笔</span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            适用于新地址或当前无 USDT 余额的地址。<br />系统将自动派发约 131,000 能量。
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="mb-8 md:mb-12" id="address" aria-labelledby="sec-address">
-    <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center shadow-lg">
-      <h2 id="sec-address" class="section-heading mb-4">收款地址（TRX / TRON 网络）</h2>
-      <div class="max-w-xl mx-auto mb-4">
-        <div class="font-mono text-base md:text-lg lg:text-xl bg-gray-900 border border-gray-700 rounded-md p-4 break-all text-blue-400 selection:bg-blue-800 selection:text-white" id="tron-address" translate="no">
-          {TRON_RECEIVER_ADDRESS}
-        </div>
-        <p class="mt-3 text-sm text-gray-400">
-          **只转 TRX！** 务必确认网络是 <strong>TRON</strong>。转账前请务必核对地址和金额。
-        </p>
+  <!-- How it works Section -->
+  <section id="steps" aria-labelledby="sec-steps" class="mb-20 md:mb-32 scroll-mt-24 relative">
+    <div class="absolute inset-0 bg-blue-900/5 rounded-[3rem] -z-10 transform -rotate-1"></div>
+    <div class="bg-[#0a0f1c]/80 backdrop-blur-sm border border-white/5 rounded-[3rem] p-8 md:p-16">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 id="sec-steps" class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">简单 3 步，轻松获取</h2>
+        <p class="text-gray-400">无需注册，无需授权，转账即用。</p>
       </div>
-      <div class="flex flex-wrap justify-center gap-4">
-        <button type="button" class="btn btn-secondary px-6 py-3 text-base md:text-lg" id="copy-address-btn">
-          复制地址
-        </button>
-        <a
-          class="btn btn-secondary px-6 py-3 text-base md:text-lg"
-          href={TRONSCAN_ADDRESS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          TronScan 查询 →
-        </a>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative">
+        <!-- 连接线 (仅在大屏显示) -->
+        <div class="hidden md:block absolute top-8 left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 -z-10"></div>
+        
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 flex items-center justify-center text-xl font-black text-blue-400 mb-6 shadow-lg">1</div>
+          <h3 class="text-xl font-semibold text-gray-200 mb-3">复制地址</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">复制本页提供的官方收款地址，并在您的去中心化钱包中准备转账。</p>
+        </div>
+        
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border border-blue-500/30 flex items-center justify-center text-xl font-black text-blue-400 mb-6 shadow-[0_0_20px_rgba(59,130,246,0.2)]">2</div>
+          <h3 class="text-xl font-semibold text-gray-200 mb-3">转入 TRX</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">根据对方地址是否有 U，向收款地址转入 {PRICE_WITH_U} 或 {PRICE_WITHOUT_U} TRX。务必确认网络为 TRON。</p>
+        </div>
+        
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 flex items-center justify-center text-xl font-black text-blue-400 mb-6 shadow-lg">3</div>
+          <h3 class="text-xl font-semibold text-gray-200 mb-3">自动到账</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">链上确认后（通常 3-9 秒），系统会自动将能量派发到您发起转账的钱包中。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section aria-labelledby="sec-faq" class="mb-8 md:mb-12">
-    <h2 id="sec-faq" class="section-heading">常见问题解答</h2>
+  <!-- Address Section (核心转化区) -->
+  <section id="address" aria-labelledby="sec-address" class="mb-20 md:mb-32 scroll-mt-24">
+    <div class="max-w-3xl mx-auto">
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+        <div class="relative bg-[#0a0f1c] border border-gray-800 rounded-3xl p-8 md:p-12 text-center">
+          <h2 id="sec-address" class="text-2xl md:text-3xl font-bold text-white mb-2">官方收款地址</h2>
+          <p class="text-gray-400 text-sm mb-8">支持 TronLink, TokenPocket, imToken 等去中心化钱包</p>
+          
+          <div class="bg-black/50 border border-gray-800/80 rounded-2xl p-4 md:p-6 mb-6">
+            <div class="font-mono text-sm sm:text-base md:text-lg lg:text-xl break-all text-blue-300 selection:bg-blue-500/30" id="tron-address" translate="no">
+              {TRON_RECEIVER_ADDRESS}
+            </div>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <button type="button" class="btn btn-primary w-full sm:w-auto px-8 py-4 text-base" id="copy-address-btn">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              一键复制地址
+            </button>
+            <a class="btn btn-secondary w-full sm:w-auto px-8 py-4 text-base" href={TRONSCAN_ADDRESS_URL} target="_blank" rel="noopener noreferrer">
+              在 TronScan 上验证
+              <svg class="w-4 h-4 ml-2 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+
+          <div class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-xs sm:text-sm">
+            <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <span class="text-left">警告：只接受 TRX 转账！切勿从交易所直接转账，否则无法到账。</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section aria-labelledby="sec-advantages" class="mb-20 md:mb-32">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="glass-card flex flex-col items-start">
+        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-2xl mb-6 border border-blue-500/20">⚡</div>
+        <h3 class="text-lg font-bold text-gray-200 mb-2">毫秒级响应</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">全节点自建服务，链上确认后系统毫秒级触发派发，告别漫长等待。</p>
+      </div>
+      <div class="glass-card flex flex-col items-start">
+        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-2xl mb-6 border border-indigo-500/20">💎</div>
+        <h3 class="text-lg font-bold text-gray-200 mb-2">百亿能量池</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">平台自有海量 TRX 质押池，保障 24 小时能量供应充足，永不断档。</p>
+      </div>
+      <div class="glass-card flex flex-col items-start">
+        <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-2xl mb-6 border border-purple-500/20">🔒</div>
+        <h3 class="text-lg font-bold text-gray-200 mb-2">绝对安全</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">纯链上转账交互，无需连接钱包，不索要任何授权，100% 资产安全。</p>
+      </div>
+      <div class="glass-card flex flex-col items-start">
+        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-2xl mb-6 border border-emerald-500/20">🤖</div>
+        <h3 class="text-lg font-bold text-gray-200 mb-2">无人值守</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">AI 智能合约全自动处理订单，节假日无休，随时随地满足转账需求。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section aria-labelledby="sec-faq" class="mb-20 md:mb-32">
+    <div class="text-center mb-10 md:mb-16">
+      <h2 id="sec-faq" class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">常见问题解答</h2>
+      <p class="text-gray-400">了解更多关于波场能量租赁的细节</p>
+    </div>
     <div class="max-w-3xl mx-auto faq-list">
-      <details class="faq-item">
-        <summary>Q：为什么能量租赁有两种价格？</summary>
+      <details class="faq-item" name="faq">
+        <summary>为什么能量租赁有两种价格？</summary>
         <p>
-          A：波场网络规则决定，接收方地址若无 USDT 余额或首次激活，消耗能量会更高。我们提供两种价格覆盖不同场景，确保您的转账成本最优。
+          波场网络规则决定，接收方地址若无 USDT 余额或首次激活，消耗能量会更高（约 13.1万）。有 U 地址仅需约 6.5万 能量。我们提供两种价格覆盖不同场景，确保您的转账成本最优。
         </p>
       </details>
-      <details class="faq-item">
-        <summary>Q：怎么判断对方地址是否「有 U」？</summary>
-        <p>A：简单来说，如果对方地址从未收到过 USDT (TRC20) 或当前余额为零，可视为「无 U」地址。最准确的方法是前往 TronScan.org 查询该地址的 USDT 余额或历史交易记录。</p>
+      <details class="faq-item" name="faq">
+        <summary>怎么判断对方地址是否「有 U」？</summary>
+        <p>简单来说，如果对方地址从未收到过 USDT (TRC20) 或当前余额为零，可视为「无 U」地址。最准确的方法是前往 TronScan.org 查询该地址的 USDT 余额或历史交易记录。如果不确定，建议按「无 U」价格转账以防能量不足。</p>
       </details>
-      <details class="faq-item">
-        <summary>Q：转账到收款地址后，能量多久能到账？</summary>
-        <p>A：我们的系统全自动监控，通常在您的 TRX 转账完成后，等待 1-3 个区块确认（约 3-9 秒），能量即可自动派发到您发起转账的钱包地址。网络拥堵时可能略有延迟，但请放心，系统会确保处理。</p>
+      <details class="faq-item" name="faq">
+        <summary>转账到收款地址后，能量多久能到账？</summary>
+        <p>我们的系统全自动监控，通常在您的 TRX 转账完成后，等待 1-3 个区块确认（约 3-9 秒），能量即可自动派发到您发起转账的钱包地址。网络拥堵时可能略有延迟，但请放心，系统会确保处理。</p>
       </details>
-      <details class="faq-item">
-        <summary>Q：如果我转错了金额或转到了错误的链怎么办？</summary>
-        <p>A：波场 (TRON) 链上交易具有**不可逆性**。一旦转账完成，资金将无法追回。请务必在转账前仔细核对收款地址、转账网络（必须是 TRON）以及转账金额。**切勿将资金转入其他区块链网络或非本页公示的地址。**</p>
+      <details class="faq-item" name="faq">
+        <summary>如果我转错了金额或转到了错误的链怎么办？</summary>
+        <p>波场 (TRON) 链上交易具有<strong>不可逆性</strong>。一旦转账完成，资金将无法追回。请务必在转账前仔细核对收款地址、转账网络（必须是 TRON）以及转账金额。<strong>切勿将资金转入其他区块链网络或非本页公示的地址。</strong></p>
       </details>
-      <details class="faq-item">
-        <summary>Q：能量租赁安全吗？我的私钥会不会泄露？</summary>
-        <p>A：能量站是一个去中心化的租赁服务平台，您全程只需将 TRX 转账到我们的公开收款地址，**无需提供任何私钥、助记词或授权。** 所有交易都在链上公开透明，安全可靠。请务必保护好您的个人钱包信息。</p>
+      <details class="faq-item" name="faq">
+        <summary>能量租赁能节省多少手续费？</summary>
+        <p>通过租赁能量，您可以避免在 TRC20 转账时因能量不足而燃烧 TRX。以一笔标准 TRC20 转账为例，如果没有能量，可能需要燃烧约 14 TRX 或更高。通过我们的服务，您仅需支付 {PRICE_WITH_U} 或 {PRICE_WITHOUT_U} TRX，<strong>最高可节省约 80% 的手续费</strong>。</p>
       </details>
-      <details class="faq-item">
-        <summary>Q：能量租赁能节省多少手续费？</summary>
-        <p>A：通过租赁能量，您可以避免在 TRC20 转账时因能量不足而燃烧 TRX。以一笔标准 TRC20 转账为例，如果没有能量，可能需要燃烧约 13.5 TRX (当接收方有 U) 或更高。通过我们的服务，您仅需支付 ${PRICE_WITH_U} 或 ${PRICE_WITHOUT_U} TRX，**最高可节省约 80% 的手续费**。</p>
-      </details>
-      <details class="faq-item">
-        <summary>Q：我可以使用哪个钱包进行操作？</summary>
-        <p>A：您可以使用任何支持 TRON (波场) 网络和 TRC20 代币的去中心化钱包，例如 TronLink, TokenPocket, imToken, SafePal 等。**请勿直接从交易所转账 TRX 到我们的收款地址**，以免系统无法识别您的能量需求并自动派发。</p>
+      <details class="faq-item" name="faq">
+        <summary>我可以使用哪个钱包进行操作？</summary>
+        <p>您可以使用任何支持 TRON (波场) 网络和 TRC20 代币的去中心化钱包，例如 TronLink, TokenPocket, imToken, SafePal 等。<strong>请勿直接从交易所转账 TRX 到我们的收款地址</strong>，以免系统无法识别您的能量需求并导致资产损失。</p>
       </details>
     </div>
   </section>
 
-  <section aria-labelledby="sec-seo" class="mb-8 md:mb-12">
-    <h2 id="sec-seo" class="section-heading">延伸阅读</h2>
-    <p class="mt-4 text-center text-gray-400">
-      帮助搜索引擎与用户理解能量与手续费。
+  <!-- Footer Note -->
+  <div class="border-t border-gray-800/50 pt-8 pb-4">
+    <p class="text-xs text-gray-500 text-center max-w-4xl mx-auto leading-relaxed">
+      <strong>免责声明：</strong> 本平台仅提供基于波场 TRON 网络的能量租赁技术服务。链上操作不可逆，用户需自行承担因地址填错、网络选错等操作失误造成的资产损失。本站不提供任何法定货币兑换服务，不构成任何投资或金融建议。
     </p>
-    <ul class="mt-4 flex flex-wrap justify-center space-x-4 text-gray-400">
-      <li><a class="hover:text-blue-400" href={`${base}help/what-is-energy/`}>波场「能量」是什么？</a></li>
-      <li><a class="hover:text-blue-400" href={`${base}help/trc20-transfer-fee/`}>TRC20 手续费说明</a></li>
-      <li><a class="hover:text-blue-400" href={`${base}about/`}>关于能量站</a></li>
-    </ul>
-  </section>
-
-  <p class="note p-4 rounded-lg bg-yellow-900/20 border border-yellow-800 text-yellow-300 text-sm text-center mb-8 md:mb-12 max-w-4xl mx-auto">
-    <strong>风险提示：</strong>链上操作不可逆，请务必核对收款地址和网络。本站仅为能量租赁服务，不构成任何投资或金融建议。正式经营请务必补充合规主体信息及法律声明。
-  </p>
+  </div>
 
   <script define:vars={{ tronAddr: TRON_RECEIVER_ADDRESS }}>
     (function () {
@@ -181,10 +235,15 @@ const base = import.meta.env.BASE_URL;
       if (!btn) return;
       btn.addEventListener("click", function () {
         function ok() {
-          var t = btn.textContent;
-          btn.textContent = "已复制";
+          var originalHTML = btn.innerHTML;
+          btn.innerHTML = '<svg class="w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 复制成功';
+          btn.classList.add('bg-green-900/30', 'border-green-500/50', 'text-green-400');
+          btn.classList.remove('btn-primary');
+          
           setTimeout(function () {
-            btn.textContent = t;
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('bg-green-900/30', 'border-green-500/50', 'text-green-400');
+            btn.classList.add('btn-primary');
           }, 2000);
         }
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -199,30 +258,66 @@ const base = import.meta.env.BASE_URL;
   </script>
 </Layout>
 
-<style>
-  /* 自定义样式，确保 Tailwind 未覆盖的部分或特殊组件样式 */
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "TRX能量租赁｜TRX25",
+    "description": "专业波场TRX能量租赁平台，USDT(TRC20)转账有U地址仅需2.5 TRX，无U地址5 TRX。即时自动到账，安全可靠，大幅降低您的链上交易成本。",
+    "mainEntity": [
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "为什么能量租赁有两种价格？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "波场网络规则决定，接收方地址若无 USDT 余额或首次激活，消耗能量会更高。我们提供两种价格覆盖不同场景，确保您的转账成本最优。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "怎么判断对方地址是否「有 U」？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "简单来说，如果对方地址从未收到过 USDT (TRC20) 或当前余额为零，可视为「无 U」地址。最准确的方法是前往 TronScan.org 查询该地址的 USDT 余额或历史交易记录。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "转账到收款地址后，能量多久能到账？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "我们的系统全自动监控，通常在您的 TRX 转账完成后，等待 1-3 个区块确认（约 3-9 秒），能量即可自动派发到您发起转账的钱包地址。网络拥堵时可能略有延迟，但请放心，系统会确保处理。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如果我转错了金额或转到了错误的链怎么办？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "波场 (TRON) 链上交易具有不可逆性。一旦转账完成，资金将无法追回。请务必在转账前仔细核对收款地址、转账网络（必须是 TRON）以及转账金额。切勿将资金转入其他区块链网络或非本页公示的地址。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "能量租赁能节省多少手续费？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "通过租赁能量，您可以避免在 TRC20 转账时因能量不足而燃烧 TRX。以一笔标准 TRC20 转账为例，如果没有能量，可能需要燃烧约 14 TRX 或更高。通过我们的服务，您仅需支付 2.5 或 5 TRX，最高可节省约 80% 的手续费。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "我可以使用哪个钱包进行操作？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "您可以使用任何支持 TRON (波场) 网络和 TRC20 代币的去中心化钱包，例如 TronLink, TokenPocket, imToken, SafePal 等。请勿直接从交易所转账 TRX 到我们的收款地址，以免系统无法识别您的能量需求并自动派发。"
+            }
+          }
+        ]
+      }
+    ]
   }
-
-  /* 确保链接和文本在小屏下居中 */
-  @media (max-width: 640px) {
-    .price-hero__sub,
-    .btn-row {
-      text-align: center;
-      justify-content: center;
-    }
-    .btn-row .btn,
-    .btn-row .btn-secondary {
-      width: 100%;
-    }
-  }
-</style>
+</script>
