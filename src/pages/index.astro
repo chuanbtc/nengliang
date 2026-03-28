@@ -24,36 +24,31 @@ const base = import.meta.env.BASE_URL;
     <p class="mt-4 text-base md:text-lg text-gray-300 max-w-2xl">
       USDT(TRC20)转账手续费立省最高 80%，全自动即时派发。
     </p>
-    <p class="mt-6">
-      <a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-blue-500 text-white hover:bg-blue-600 focus-visible:ring-blue-500 px-6 py-3 md:px-8 md:py-4 text-base md:text-lg" href={TRONSCAN_ADDRESS_URL} target="_blank" rel="noopener noreferrer">
-        TronScan 查询地址 →
-      </a>
-    </p>
   </section>
 
   <section aria-labelledby="sec-plans" class="mb-8 md:mb-12">
-    <h2 id="sec-plans" class="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-6 md:mb-8">价格说明</h2>
+    <h2 id="sec-plans" class="section-heading">价格说明</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
       <div class="bg-gray-800 border border-blue-500 rounded-xl p-6 text-center shadow-lg">
         <div class="text-xs text-gray-400 mb-2">对方地址已有 U</div>
         <div class="text-3xl font-bold text-blue-400">{PRICE_WITH_U} TRX</div>
-        <div class="mt-2 text-sm text-gray-400">普通 USDT 转账，节省大量手续费</div>
+        <div class="mt-2 text-sm text-gray-400">常规单笔 USDT 转账能量，<br class="sm:hidden" />立省手续费！</div>
       </div>
       <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center">
         <div class="text-xs text-gray-400 mb-2">对方地址无 U</div>
         <div class="text-3xl font-bold text-gray-100">{PRICE_WITHOUT_U} TRX</div>
-        <div class="mt-2 text-sm text-gray-400">新地址或无 USDT 余额，首次转账推荐</div>
+        <div class="mt-2 text-sm text-gray-400">新地址或无 USDT 余额，<br class="sm:hidden" />首次转账更推荐此项。</div>
       </div>
       <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center">
         <div class="text-xs text-gray-400 mb-2">到账方式</div>
         <div class="text-3xl font-bold text-gray-100">自动</div>
-        <div class="mt-2 text-sm text-gray-400">全天候 AI 自动派发，快速无感</div>
+        <div class="mt-2 text-sm text-gray-400">全天候 AI 智能派发，<br class="sm:hidden" />极速无感。</div>
       </div>
     </div>
   </section>
 
   <section aria-labelledby="sec-advantages" class="mb-8 md:mb-12">
-    <h2 id="sec-advantages" class="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-6 md:mb-8">为什么选择能量站？</h2>
+    <h2 id="sec-advantages" class="section-heading">为什么选择能量站？</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
       <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center">
         <h3 class="text-lg font-semibold mb-2">🚀 极速到账</h3>
@@ -75,13 +70,13 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <section id="steps" aria-labelledby="sec-steps" class="mb-8 md:mb-12">
-    <h2 id="sec-steps" class="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-6 md:mb-8">简单 3 步，轻松获取能量</h2>
+    <h2 id="sec-steps" class="section-heading">简单 3 步，轻松获取能量</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
       <div class="flex items-start bg-gray-800 border border-gray-700 rounded-xl p-6">
         <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center mr-4">1</span>
         <div>
           <h3 class="text-lg font-semibold mb-1">复制收款地址</h3>
-          <p class="text-sm text-gray-400">复制下面地址，确认网络是 <strong>TRON</strong>。</p>
+          <p class="text-sm text-gray-400">复制本页收款地址，务必确认网络为 <strong>TRON</strong>。</p>
         </div>
       </div>
       <div class="flex items-start bg-gray-800 border border-gray-700 rounded-xl p-6">
@@ -95,7 +90,7 @@ const base = import.meta.env.BASE_URL;
         <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center mr-4">3</span>
         <div>
           <h3 class="text-lg font-semibold mb-1">等待能量到账</h3>
-          <p class="text-sm text-gray-400">链上确认后自动到账。高峰期可能稍慢一点。</p>
+          <p class="text-sm text-gray-400">链上确认后即时自动到账，高峰期或有少量延迟。</p>
         </div>
       </div>
     </div>
@@ -103,9 +98,9 @@ const base = import.meta.env.BASE_URL;
 
   <section class="mb-8 md:mb-12" id="address" aria-labelledby="sec-address">
     <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center shadow-lg">
-      <h2 id="sec-address" class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">收款地址（TRX / TRON 网络）</h2>
+      <h2 id="sec-address" class="section-heading mb-4">收款地址（TRX / TRON 网络）</h2>
       <div class="max-w-xl mx-auto mb-4">
-        <div class="font-mono text-base md:text-lg bg-gray-900 border border-gray-700 rounded-md p-4 break-all text-blue-400" id="tron-address" translate="no">
+        <div class="font-mono text-base md:text-lg lg:text-xl bg-gray-900 border border-gray-700 rounded-md p-4 break-all text-blue-400 selection:bg-blue-800 selection:text-white" id="tron-address" translate="no">
           {TRON_RECEIVER_ADDRESS}
         </div>
         <p class="mt-3 text-sm text-gray-400">
@@ -117,7 +112,7 @@ const base = import.meta.env.BASE_URL;
           复制地址
         </button>
         <a
-          class="btn btn-primary px-6 py-3 text-base md:text-lg"
+          class="btn btn-secondary px-6 py-3 text-base md:text-lg"
           href={TRONSCAN_ADDRESS_URL}
           target="_blank"
           rel="noopener noreferrer"
@@ -129,7 +124,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <section aria-labelledby="sec-faq" class="mb-8 md:mb-12">
-    <h2 id="sec-faq" class="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-6 md:mb-8">常见问题</h2>
+    <h2 id="sec-faq" class="section-heading">常见问题解答</h2>
     <div class="max-w-3xl mx-auto faq-list">
       <details class="faq-item">
         <summary>Q：为什么能量租赁有两种价格？</summary>
@@ -165,7 +160,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <section aria-labelledby="sec-seo" class="mb-8 md:mb-12">
-    <h2 id="sec-seo" class="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-6 md:mb-8">延伸阅读</h2>
+    <h2 id="sec-seo" class="section-heading">延伸阅读</h2>
     <p class="mt-4 text-center text-gray-400">
       帮助搜索引擎与用户理解能量与手续费。
     </p>
