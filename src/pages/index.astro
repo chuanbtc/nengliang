@@ -1,44 +1,135 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import {
+  TRON_RECEIVER_ADDRESS,
+  TRONSCAN_ADDRESS_URL,
+  PRICE_WITH_U,
+  PRICE_WITHOUT_U,
+  SITE_TAGLINE,
+} from "../config/site";
 
 const base = import.meta.env.BASE_URL;
 ---
 
 <Layout
-  title="波场 TRX 能量租赁服务｜能量站 Nengliang"
-  description="面向波场（TRON）用户的 TRX 能量租赁与相关说明，降低链上操作成本。具体规则与价格以站内公示为准。"
-  keywords="TRX能量租赁,波场能量,TRON能量,TRC20,能量租赁"
+  title={`TRX能量租赁｜有U ${PRICE_WITH_U} TRX / 无U ${PRICE_WITHOUT_U} TRX｜能量站`}
+  description={`USDT(TRC20) 转账能量按笔计费：对方地址有 U ${PRICE_WITH_U} TRX / 笔，无 U ${PRICE_WITHOUT_U} TRX / 笔。向公示地址转入后自动处理。`}
+  keywords="TRX能量租赁,2.5TRX,5TRX,波场能量,TRC20转账能量,能量闪租"
 >
-  <div class="hero">
-    <h1>波场 TRX 能量租赁服务</h1>
-    <p class="lead">
-      为 TRC20 转账等链上操作提供能量相关服务与说明。适合需要控制手续费、简化操作流程的用户了解与使用。
+  <section class="price-hero" id="price" aria-labelledby="price-title">
+    <p class="price-hero__label">简单清晰 · 手机电脑都能看</p>
+    <h1 id="price-title" class="price-hero__amount">
+      {PRICE_WITH_U} / {PRICE_WITHOUT_U}
+      <span class="price-hero__unit"> TRX / 笔</span>
+    </h1>
+    <p class="price-hero__sub">{SITE_TAGLINE}</p>
+    <p class="price-hero__sub" style="margin-top: 0.5rem">
+      对方地址有 U 按 {PRICE_WITH_U} TRX，一般无 U 按 {PRICE_WITHOUT_U} TRX。看不懂也没关系，按下面 3 步操作即可。
     </p>
-    <a class="btn" href={`${base}contact/`}>咨询与合作</a>
-  </div>
+  </section>
 
-  <section aria-labelledby="sec-features">
-    <h2 id="sec-features">服务概要</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>能量租赁</h3>
-        <p>按笔或按套餐租用波场能量，用于满足转账等资源消耗场景（以实际上线规则为准）。</p>
+  <section aria-labelledby="sec-plans">
+    <h2 id="sec-plans">价格说明</h2>
+    <div class="pricing-row">
+      <div class="price-card price-card--highlight">
+        <div class="price-card__name">对方地址已有 U</div>
+        <div class="price-card__val">{PRICE_WITH_U} TRX</div>
+        <div class="price-card__hint">大多数普通单笔转账看这个价格就行</div>
       </div>
-      <div class="card">
-        <h3>流程透明</h3>
-        <p>建议在正式使用前阅读帮助中心说明，了解能量、带宽与手续费的关系。</p>
+      <div class="price-card">
+        <div class="price-card__name">对方地址无 U</div>
+        <div class="price-card__val">{PRICE_WITHOUT_U} TRX</div>
+        <div class="price-card__hint">首次激活或对方地址没 U，通常按更高能量算</div>
       </div>
-      <div class="card">
-        <h3>安全提示</h3>
-        <p>请认准官方渠道，勿向陌生人泄露助记词、私钥；链上操作不可逆，请谨慎授权。</p>
+      <div class="price-card">
+        <div class="price-card__name">到账方式</div>
+        <div class="price-card__val">自动</div>
+        <div class="price-card__hint">链上确认后自动处理，请只用本页地址</div>
       </div>
+    </div>
+  </section>
+
+  <section id="steps" aria-labelledby="sec-steps">
+    <h2 id="sec-steps">3 步完成</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="step__num" aria-hidden="true">1</span>
+        <div class="step__body">
+          <h3>复制收款地址</h3>
+          <p>复制下面地址，确认网络是 <strong>TRON</strong>。</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step__num" aria-hidden="true">2</span>
+        <div class="step__body">
+          <h3>按情况转入 {PRICE_WITH_U} 或 {PRICE_WITHOUT_U} TRX</h3>
+          <p>有 U 转 {PRICE_WITH_U}，无 U 转 {PRICE_WITHOUT_U}；不确定时按无 U 处理更稳妥。</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step__num" aria-hidden="true">3</span>
+        <div class="step__body">
+          <h3>等待能量到账</h3>
+          <p>链上确认后自动到账。高峰期可能稍慢一点。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="address-section" id="address" aria-labelledby="sec-address">
+    <h2 id="sec-address">收款地址（TRX / TRON 网络）</h2>
+    <div class="address-box">
+      <div class="address-text" id="tron-address" translate="no">
+        {TRON_RECEIVER_ADDRESS}
+      </div>
+      <p class="address-tip">
+        只转 <strong>TRX</strong>，不要转到其他链。转账前请再核对一遍地址。
+      </p>
+      <div class="btn-row">
+        <button type="button" class="btn-secondary" id="copy-address-btn">
+          复制地址
+        </button>
+        <a
+          class="btn"
+          href={TRONSCAN_ADDRESS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          TronScan 查询
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="sec-faq">
+    <h2 id="sec-faq">常见问题</h2>
+    <div class="faq-list">
+      <details>
+        <summary>为什么有两种价格？</summary>
+        <p>
+          因为对方地址状态不同，消耗的能量也可能不同。现在按：
+          有 U {PRICE_WITH_U} TRX / 无 U {PRICE_WITHOUT_U} TRX 展示。
+        </p>
+      </details>
+      <details>
+        <summary>不会判断有 U / 无 U 怎么办？</summary>
+        <p>最简单的做法是按无 U 价格准备；或者先去 TronScan 看接收地址是否已有 USDT(TRC20) 记录。</p>
+      </details>
+      <details>
+        <summary>转错金额或转错链怎么办？</summary>
+        <p>链上转账不可逆，所以一定要确认网络、金额和地址。转错链通常无法找回。</p>
+      </details>
+      <details>
+        <summary>能量多久到账？</summary>
+        <p>一般几秒到十几秒内处理完成；网络拥堵时会更慢一些。</p>
+      </details>
     </div>
   </section>
 
   <section aria-labelledby="sec-seo">
     <h2 id="sec-seo">延伸阅读</h2>
     <p style="color: var(--muted); margin-bottom: 1rem;">
-      以下页面便于检索与理解，可按需继续扩充为长尾内容。
+      帮助搜索引擎与用户理解能量与手续费。
     </p>
     <ul style="color: var(--muted); line-height: 2">
       <li><a href={`${base}help/what-is-energy/`}>波场「能量」是什么？</a></li>
@@ -48,6 +139,43 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <p class="note">
-    <strong>声明：</strong>本站为项目展示与说明用途模板，上线前请替换为真实公司/主体信息、合规文案与联系方式，并勿使用无法核实的收益承诺类表述。
+    <strong>提示：</strong>页面已经尽量做得简单直接，但转账前还是要确认网络为 <strong>TRON</strong>，并逐字核对地址。手机和电脑都可直接使用本页。
   </p>
+
+  <script define:vars={{ tronAddr: TRON_RECEIVER_ADDRESS }}>
+    (function () {
+      var btn = document.getElementById("copy-address-btn");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        function ok() {
+          var t = btn.textContent;
+          btn.textContent = "已复制";
+          setTimeout(function () {
+            btn.textContent = t;
+          }, 2000);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(tronAddr).then(ok).catch(function () {
+            window.prompt("请手动复制：", tronAddr);
+          });
+        } else {
+          window.prompt("请手动复制：", tronAddr);
+        }
+      });
+    })();
+  </script>
 </Layout>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

@@ -31,8 +31,11 @@ const base = import.meta.env.BASE_URL;
     <header class="site-header">
       <div class="site-header__inner">
         <a class="logo" href={`${base}`}>能量站 Nengliang</a>
-        <nav class="nav" aria-label="主导航">
+        <nav class="nav anchor-nav" aria-label="主导航">
           <a href={`${base}`}>首页</a>
+          <a href={`${base}#price`}>价格</a>
+          <a href={`${base}#steps`}>步骤</a>
+          <a href={`${base}#address`}>收款地址</a>
           <a href={`${base}help/what-is-energy/`}>什么是能量</a>
           <a href={`${base}help/trc20-transfer-fee/`}>TRC20 手续费</a>
           <a href={`${base}about/`}>关于我们</a>
