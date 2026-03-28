@@ -1,11 +1,13 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-// GitHub Pages 项目站：https://chuanbtc.github.io/nengliang/
-// 若改用自定义域名并部署在根路径，把 site 改成你的域名，并删除或改为 base: "/"
+// 若部署到自定义域名或根路径，可设置环境变量 `PUBLIC_BASE_URL`
+// 默认（如 GitHub Pages 项目站）base 为 `/nengliang`
+const BASE_URL = process.env.PUBLIC_BASE_URL || "/nengliang";
+
 export default defineConfig({
-  site: "https://chuanbtc.github.io",
-  base: "/", // 部署到域名根路径时使用此配置
+  site: "https://chuanbtc.github.io", // 你的域名，这里是 GitHub Pages 的主域名，腾讯云建议改成你自己的域名
+  base: BASE_URL,
   trailingSlash: "always",
   integrations: [sitemap()],
 });
